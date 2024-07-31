@@ -1,0 +1,229 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: lightcyan;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding-bottom: 70px;
+}
+
+h1 {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-palette: black;
+  font-size: 100px;
+
+}
+
+
+h3 {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  font-style: normal;
+  font-palette: black;
+}
+
+.TitleP {
+  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 15px;
+
+}
+
+a:link {
+  color: royalblue
+}
+
+a:active {
+  color: aliceblue
+}
+
+a:visited {
+  color: #ff00d0
+}
+
+a:hover {
+  color: darkblue
+}
+
+#headerimage {
+  width: 200px;
+  height: 200px;
+  max-width: 300px;
+  margin: -50%;
+  padding: 15%;
+}
+
+.video {
+  text-align: center;
+  width: 100%;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-top: -20px;
+  margin-bottom: -15px;
+}
+
+.header-item:nth-of-type(1) {
+  width: 50%;
+  margin: -10%;
+}
+
+.header-item:nth-of-type(2) {
+  width: 35%;
+  margin: 25%;
+
+}
+
+
+
+.button {
+  background-color: #8abff5;
+  text-align: center;
+  cursor: pointer;
+  margin: 5%;
+  border: 2px;
+  border-style: solid;
+  border-color: black;
+  border-width: medium;
+  border-radius: 14px;
+  padding: -5px;
+
+}
+
+.navbar {
+  list-style-type: none;
+  overflow: hidden;
+  /* position: fixed; */
+  top: 0;
+  margin-bottom: 40px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+
+.footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #58bae4;
+  ;
+  border: 5px;
+  border-color: #bc4949;
+  border-style: solid;
+  border-radius: 1px;
+
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+#theme-button {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: #bc4949;
+  background-color: #58bae4;
+
+}
+
+.NavFlexBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: 8px;
+  margin-top: -80px;
+}
+
+.petition-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 100%;
+  padding-bottom: 50px;
+}
+
+.petition-para {
+  width: 55%;
+  padding-right: 10px;
+}
+
+.signatures {
+  width: 45%;
+  padding-right: 10px;
+}
+
+.CausesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+
+
+.revealable {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all 2s ease;
+}
+
+.active {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.error {
+  border-style: solid;
+  border-width: 2px;
+  border-color: red;
+  background: pink;
+}
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 2; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(0,0,0,0.4); 
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: lightsteelblue; 
+  color: black;
+  text-align: center;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#thanks-modal-content {
+  width: 20rem; 
+}
+
+#modal-text-container {
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
