@@ -12,12 +12,12 @@ let count = 3;
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  
-  
+
+
   let containsErrors = false;
   const petitionInputs = document.getElementById('sign-petition').elements;
 
-for (let i = 0; i < petitionInputs.length; i++) {
+  for (let i = 0; i < petitionInputs.length; i++) {
     if (petitionInputs[i].value.length < 2) {
       petitionInputs[i].classList.add('error');
       containsErrors = true;
@@ -46,13 +46,14 @@ for (let i = 0; i < petitionInputs.length; i++) {
     email.classList.remove('error');
   }
 
-  
+
 
   if (containsErrors) {
     return;
   }
 
- 
+  toggleModal(name.value);
+
   const hometown = document.getElementById('hometown').value;
   const counter = document.getElementById('counter');
   const result = document.createElement('p');
@@ -76,16 +77,16 @@ let animation = {
 const revealableContainers = document.querySelectorAll('.revealable');
 
 function reveal() {
-for (let i = 0; i < revealableContainers.length; i++){
-  let windowHeight = window.innerHeight;
-  let topOfRevealableContainer = revealableContainers[i].getBoundingClientRect().top;
-  if(topOfRevealableContainer < windowHeight - animation.revealDistance){
-    revealableContainers[i].classList.add('active');
-  } else{
-    revealableContainers[i].classList.remove('active');
+  for (let i = 0; i < revealableContainers.length; i++) {
+    let windowHeight = window.innerHeight;
+    let topOfRevealableContainer = revealableContainers[i].getBoundingClientRect().top;
+    if (topOfRevealableContainer < windowHeight - animation.revealDistance) {
+      revealableContainers[i].classList.add('active');
+    } else {
+      revealableContainers[i].classList.remove('active');
+    }
+
   }
-  
-}
 }
 
 window.addEventListener('scroll', reveal);
@@ -95,20 +96,43 @@ const reduceMotionBtn = document.getElementById('reduce-motion-btn');
 
 
 function reduceMotion() {
- 
+
   animation.revealDistance = 20;
   animation.revealDuration = '0s';
   animation.revealTimingFunction = 'none';
 
-  
+
   for (let i = 0; i < revealableContainers.length; i++) {
-   
+
     revealableContainers[i].style.transition = `transform ${animation.revealDuration} ${animation.revealTimingFunction}, opacity ${animation.revealDuration} ${animation.revealTimingFunction}`;
-    revealableContainers[i].style.transform = `translateY(0px)`; 
-    revealableContainers[i].style.opacity = `1`; 
+    revealableContainers[i].style.transform = `translateY(0px)`;
+    revealableContainers[i].style.opacity = `1`;
   }
 }
 
 reduceMotionBtn.addEventListener('click', reduceMotion);
 
-function toggleModal 
+
+
+
+function toggleModal(name) {
+  const modal = document.getElementById('thanks-modal');
+  const modalContent = document.getElementById('modal-text-container');
+  const modalText = document.getElementById('thanks-modal-text');
+  modal.style.display = 'flex';
+  modalContent.textContent = `Thank you so much ${name}!`;
+  setTimeout(() => {
+    modal.style.display = 'none';
+  }, 10000);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  var closeModalButton = document.getElementById('closeModalButton');
+  closeModalButton.addEventListener('click', function() {
+    var modal = document.querySelector('.modal');
+    modal.style.display = 'none';
+  });
+});
+
+
+
